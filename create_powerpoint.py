@@ -2,110 +2,35 @@
 
 from pptx import Presentation
 from pptx.util import Inches, Pt
+import itertools
+import sys
 
-slide_text_1 = "yo"
+file1 = "nameoffile"
+file2 = "nameoffile"
+file3 = "nameoffile"
 
-def newpres():
-	prs = Presentation()
-	bullet_slide_layout = prs.slide_layouts[1]
-	
+with open(file1) as f1, open(file2) as f2, open(file3) as f3:
+	filelist1 = f1.read().splitlines()
+	filelist2 = f2.read().splitlines()
+	filelist3 = f3.read().splitlines()
+	lines = filelist1 + filelist2 + filelist3
+	f1.close()
+	f2.close()
+	f3.close()
+	print(len(lines))
 
+#slide_text_1 = str(dictny.get(1))
+prs = Presentation()
+bullet_slide_layout = prs.slide_layouts[1]
+
+cycle = itertools.cycle(lines)
+next(cycle)
+for i in lines:
+	next_line = next(cycle)
 	slide = prs.slides.add_slide(bullet_slide_layout)
 	shapes = slide.shapes
 	body_shape = shapes.placeholders[1]
 	tf = body_shape.text_frame
-	tf.text = slide_text_1
+	tf.text = next_line
 
-	slide = prs.slides.add_slide(bullet_slide_layout)
-	shapes = slide.shapes
-	body_shape = shapes.placeholders[1]
-	tf = body_shape.text_frame
-	tf.text = slide_text_2
-
-	slide = prs.slides.add_slide(bullet_slide_layout)
-	shapes = slide.shapes
-	body_shape = shapes.placeholders[1]
-	tf = body_shape.text_frame
-	tf.text = slide_text_3
-
-	slide = prs.slides.add_slide(bullet_slide_layout)
-	shapes = slide.shapes
-	body_shape = shapes.placeholders[1]
-	tf = body_shape.text_frame
-	tf.text = slide_text_4
-
-	slide = prs.slides.add_slide(bullet_slide_layout)
-	shapes = slide.shapes
-	body_shape = shapes.placeholders[1]
-	tf = body_shape.text_frame
-	tf.text = slide_text_5
-
-	slide = prs.slides.add_slide(bullet_slide_layout)
-	shapes = slide.shapes
-	body_shape = shapes.placeholders[1]
-	tf = body_shape.text_frame
-	tf.text = slide_text_6
-
-	slide = prs.slides.add_slide(bullet_slide_layout)
-	shapes = slide.shapes
-	body_shape = shapes.placeholders[1]
-	tf = body_shape.text_frame
-	tf.text = slide_text_7
-
-	slide = prs.slides.add_slide(bullet_slide_layout)
-	shapes = slide.shapes
-	body_shape = shapes.placeholders[1]
-	tf = body_shape.text_frame
-	tf.text = slide_text_8
-
-	slide = prs.slides.add_slide(bullet_slide_layout)
-	shapes = slide.shapes
-	body_shape = shapes.placeholders[1]
-	tf = body_shape.text_frame
-	tf.text = slide_text_9
-
-	slide = prs.slides.add_slide(bullet_slide_layout)
-	shapes = slide.shapes
-	body_shape = shapes.placeholders[1]
-	tf = body_shape.text_frame
-	tf.text = slide_text_10
-
-	slide = prs.slides.add_slide(bullet_slide_layout)
-	shapes = slide.shapes
-	body_shape = shapes.placeholders[1]
-	tf = body_shape.text_frame
-	tf.text = slide_text_11
-
-	slide = prs.slides.add_slide(bullet_slide_layout)
-	shapes = slide.shapes
-	body_shape = shapes.placeholders[1]
-	tf = body_shape.text_frame
-	tf.text = slide_text_12
-
-	slide = prs.slides.add_slide(bullet_slide_layout)
-	shapes = slide.shapes
-	body_shape = shapes.placeholders[1]
-	tf = body_shape.text_frame
-	tf.text = slide_text_13
-
-	slide = prs.slides.add_slide(bullet_slide_layout)
-	shapes = slide.shapes
-	body_shape = shapes.placeholders[1]
-	tf = body_shape.text_frame
-	tf.text = slide_text_14
-
-	slide = prs.slides.add_slide(bullet_slide_layout)
-	shapes = slide.shapes
-	body_shape = shapes.placeholders[1]
-	tf = body_shape.text_frame
-	tf.text = slide_text_15
-
-	slide = prs.slides.add_slide(bullet_slide_layout)
-	shapes = slide.shapes
-	body_shape = shapes.placeholders[1]
-	tf = body_shape.text_frame
-	tf.text = slide_text_16
-
-	prs.save('test.pptx')
-
-newpres()
+prs.save('test.pptx')
