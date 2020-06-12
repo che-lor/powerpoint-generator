@@ -19,7 +19,6 @@ with open(file1) as f1, open(file2) as f2, open(file3) as f3:
 	f3.close()
 	print(len(lines))
 
-#slide_text_1 = str(dictny.get(1))
 prs = Presentation()
 bullet_slide_layout = prs.slide_layouts[1]
 
