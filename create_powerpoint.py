@@ -17,7 +17,7 @@ with open(file1) as f1, open(file2) as f2, open(file3) as f3:
 	f1.close()
 	f2.close()
 	f3.close()
-	print(len(lines))
+	#print(len(lines))
 
 prs = Presentation()
 bullet_slide_layout = prs.slide_layouts[1]
