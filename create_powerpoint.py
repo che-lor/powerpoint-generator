@@ -6,9 +6,10 @@ import itertools
 
 ##################-Fill Out-###################
 ###############################################
-file1 = "nameoffile"
-file2 = "nameoffile"
-file3 = "nameoffile"
+file1 = "nameoffile" #add .txt to name
+file2 = "nameoffile" #add .txt to name
+file3 = "nameoffile" #add .txt to name
+powerpoint_name = 'name_of_powerpoint'
 ###############################################
 ###############################################
 powerpoint = powerpoint_name + ".pptx"
