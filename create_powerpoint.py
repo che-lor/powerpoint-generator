@@ -29,7 +29,7 @@ with open(_file1) as f1, open(_file2) as f2, open(_file3) as f3:
 #Open presentation using the "slide_master.pptx" file
 prs = Presentation(slide_master_template)
 
-#Create a slide for each line in the file
+#Create a slide for each line
 cycle = itertools.cycle(lines)
 for eachline in lines:
 	next_line = next(cycle)
