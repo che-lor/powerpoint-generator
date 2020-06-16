@@ -1,3 +1,10 @@
-# powerpoint-generator
-This script automates the process of manaully adding text to a powerpoint presentation. 
-Will add documentation on how to use.
+# Getting Started
+
+Install Homebrew:
+```
+mkdir homebrew && curl -L https://github.com/Homebrew/brew/tarball/master | tar xz --strip 1 -C homebrew
+```
+Install Python:
+```
+brew install python
+```
