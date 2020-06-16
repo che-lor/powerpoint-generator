@@ -40,9 +40,6 @@ for eachline in lines:
 	tf = body_shape.text_frame
 	tf.text = next_line
 
-save = prs.save(_powerpoint_name)
-save
-if [ save ]:
-	print(save_message)
-else:
-	print(error_message)
+#Save file
+prs.save(_powerpoint_name)
+
