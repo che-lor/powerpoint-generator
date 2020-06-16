@@ -1,4 +1,9 @@
 # Getting Started
+Install Packages:
+-Homebrew
+-Python
+-Pip
+-Pptx
 
 Install Homebrew:
 ```
