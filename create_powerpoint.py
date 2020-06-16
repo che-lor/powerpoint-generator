@@ -31,7 +31,7 @@ prs = Presentation(slide_master_template)
 
 #Create a slide for each line in the file
 cycle = itertools.cycle(lines)
-for i in lines:
+for eachline in lines:
 	next_line = next(cycle)
 	bullet_slide_layout = prs.slide_layouts[1]
 	slide = prs.slides.add_slide(bullet_slide_layout)
