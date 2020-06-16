@@ -1,45 +1,46 @@
 #!/usr/bin/env python3
 
 from pptx import Presentation
-from pptx.dml.color import RGBColor
 import itertools
 
-##################-Fill Out-###################
-###############################################
-file1 = "nameoffile" #add .txt to name
-file2 = "nameoffile" #add .txt to name
-file3 = "nameoffile" #add .txt to name
-powerpoint_name = 'name_of_powerpoint'
-###############################################
-###############################################
-powerpoint = powerpoint_name + ".pptx"
+###################-FILL-OUT-####################
+file1 = "How deep the fathers love"
+file2 = "Cov ntseeg Yexus yeej yog ib tse"
+file3 = "Tus ntseeg yuav tsum hlub Vajtswv"
+powerpoint_name = "7-15-20"
+#################################################
+_file1 = file1 + ".txt"
+_file2 = file2 + ".txt"
+_file3 = file3 + ".txt"
+_powerpoint_name = powerpoint_name + ".pptx"
 slide_master_template = "slide_master.pptx"
 save_message = "Powerpoint was created!"
 error_message = "Looks like there was an error :("
 
-with open(file1) as f1, open(file2) as f2, open(file3) as f3:
-	file1_list = f1.read().splitlines()
-	file2_list = f2.read().splitlines()	
-	file3_list = f3.read().splitlines()
-	lines = list(file1_list + file2_list + file3_list)
+with open(_file1) as f1, open(_file2) as f2, open(_file3) as f3:
+	file1_lines = f1.read().splitlines()
+	file2_lines = f2.read().splitlines()	
+	file3_lines = f3.read().splitlines()
+	lines = list(file1_lines + file2_lines + file3_lines)
 	f1.close()
 	f2.close()
 	f3.close()
-	
-prs = Presentation(slide_master_template)
-bullet_slide_layout = prs.slide_layouts[1]
 
+#Opening presentation using the "slide_master.pptx" file
+prs = Presentation(slide_master_template)
+
+#Create a slide for each line in the file
 cycle = itertools.cycle(lines)
-next(cycle)
 for i in lines:
 	next_line = next(cycle)
+	bullet_slide_layout = prs.slide_layouts[1]
 	slide = prs.slides.add_slide(bullet_slide_layout)
 	shapes = slide.shapes
 	body_shape = shapes.placeholders[1]
 	tf = body_shape.text_frame
 	tf.text = next_line
 
-save = prs.save(powerpoint)
+save = prs.save(_powerpoint_name)
 save
 if [ save ]:
 	print(save_message)
