@@ -1,4 +1,25 @@
 # Getting Started
 Ensure packages are installed:
+- Homebrew
 - Python 
+- Pip
 - Pptx
+
+Install Homebrew:
+```
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+
+```
+Install Python:
+```
+brew install python
+```
+Install Pip:
+```
+sudo easy_install pip
+$ sudo pip install --upgrade pip
+```
+Install Pptx:
+```
+pip install python-pptx
+```
