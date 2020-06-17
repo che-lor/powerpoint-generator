@@ -14,7 +14,7 @@ Install Python:
 ```
 brew install python
 ```
-Install Pip:
+Install Pip & Update:
 ```
 sudo easy_install pip
 sudo pip install --upgrade pip
