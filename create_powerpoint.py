@@ -14,8 +14,7 @@ _file2 = file2 + ".txt"
 _file3 = file3 + ".txt"
 _powerpoint_name = powerpoint_name + ".pptx"
 slide_master_template = "slide_master.pptx"
-save_message = "Powerpoint was created!"
-error_message = "Looks like there was an error :("
+save_message = _powerpoint_name + "was created!"
 
 with open(_file1) as f1, open(_file2) as f2, open(_file3) as f3:
 	file1_lines = f1.read().splitlines()
@@ -41,5 +40,7 @@ for eachline in lines:
 	tf.text = next_line
 
 #Save file
-prs.save(_powerpoint_name)
+save = prs.save(_powerpoint_name)
+if [ save ]:
+	print(save_message)
 
