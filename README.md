@@ -17,7 +17,7 @@ brew install python
 Install Pip:
 ```
 sudo easy_install pip
-$ sudo pip install --upgrade pip
+sudo pip install --upgrade pip
 ```
 Install Pptx:
 ```
