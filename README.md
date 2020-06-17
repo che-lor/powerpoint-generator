@@ -25,6 +25,6 @@ pip install python-pptx
 ```
 
 # Using the Script
-Use the steps below to run the script:
+Follow the steps below to run the script:
 - Download Repository
 - Open "create_slides.py" file
