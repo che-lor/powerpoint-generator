@@ -4,10 +4,10 @@ from pptx import Presentation
 import itertools
 
 ###################-FILL-OUT-####################
-file1 = "How Deep The Fathers Love"
-file2 = "Cov Ntseeg Yexus"
-file3 = "Tus Ntseeg"
-powerpoint_name = "7-15-20"
+file1 = "name_of_file"
+file2 = "name_of_file"
+file3 = "name_of_file"
+powerpoint_name = "name_of_powerpoint"
 #################################################
 titles = [file1, file2, file3]
 _file1 = file1 + ".txt"
