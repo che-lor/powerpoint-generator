@@ -27,13 +27,13 @@ title_cycle = itertools.cycle(files[1:])
 for fn in file_names[1:]:
 	file = open(fn, 'r')
 	file_lines = file.read().splitlines()
+	file.close()
 	lines.append(next(title_cycle))
 	lines.append("")
 	lines.extend(file_lines)
 	if ((int(len(file_lines))) % 2) != 0:
 		lines.append("")
 		print("Added extra line")
-	file.close()
 
 #Open presentation using the "slide_master.pptx" file
 prs = Presentation("slide_master.pptx")
