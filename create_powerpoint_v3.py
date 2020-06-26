@@ -20,8 +20,8 @@ for f in files:
 		file_names.append(f + ext[0])
 	else:
 		file_names.append(f + ext[1])
-# print(file_names)
 
+#Store all files into a list & append titles
 lines = []
 title_cycle = itertools.cycle(files[1:])
 for fn in file_names[1:]:
@@ -34,10 +34,11 @@ for fn in file_names[1:]:
 		lines.append("")
 		print("Added extra line")
 	file.close()
-# print(lines)
 
+#Open presentation using the "slide_master.pptx" file
 prs = Presentation("slide_master.pptx")
 
+#Create slides for each LPS
 LPS = 2
 total_slides = int(len(lines)/LPS)
 line_cycle = itertools.cycle(lines)
